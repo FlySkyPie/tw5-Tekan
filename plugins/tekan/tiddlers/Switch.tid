@@ -1,0 +1,11 @@
+title: $:/Tekan/Switch
+type: text/vnd.tiddlywiki
+tags: $:/Tekan $:/tags/PageControls
+
+<$button class="tc-btn-invisible">{{$:/core/images/opacity}}
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]">
+<$action-setfield tags="TwelloMode"/>
+</$list>
+<$action-setfield $tiddler="$:/Tekan/Main" tags="$:/tags/PageTemplate"/>
+<$action-listops $tiddler="$:/Tekan/Substyles" $tags="$:/tags/Stylesheet"/>
+</$button>
