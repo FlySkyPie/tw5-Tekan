@@ -1,11 +1,21 @@
 title: $:/Tekan/Switch
 type: text/vnd.tiddlywiki
 tags: $:/Tekan $:/tags/PageControls
+description: Open Kanban
 
-<$button class="tc-btn-invisible">{{$:/core/images/opacity}}
+<$button 
+    class=<<tv-config-toolbar-class>> 
+    tooltip="Open Kanban" 
+    aria-label="Open Kanban">
+    {{$:/core/images/opacity}}
     <$list filter="[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]">
         <$action-setfield tags="TwelloMode"/>
     </$list>
     <$action-setfield $tiddler="$:/Tekan/Main" tags="$:/tags/PageTemplate"/>
     <$action-listops $tiddler="$:/Tekan/Substyles" $tags="$:/tags/Stylesheet"/>
+    <$list filter="[<tv-config-toolbar-text>match[yes]]">
+        <span class="tc-btn-text">
+            <$text text="open Kanban"/>
+        </span>
+    </$list>
 </$button>
